@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>CALCULATOR</title>
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    </head>
+    <body>
+        <input type="text" id="n1" placeholder="number 1">
+        <input type="text" id="n2" placeholder="number 2"><br><br>
+
+        <button class="op" data-op="+">+</button>
+        <button class="op" data-op="-">-</button>
+        <button class="op" data-op="*">*</button>
+        <button class="op" data-op="/">/</button>
+
+        <h3>result: <span id="result"></span></h3>
+
+        <script>
+            $(".op").click(function(){
+                let a=parseFloat($("#n1").val());
+                let b=parseFloat($("#n2").val());
+                let op=$(this).data("op");
+                let res;
+                if (op === "+") res = a + b;
+                if (op === "-") res = a - b;
+                if (op === "*") res = a * b;
+                if (op === "/") res = a / b;
+                $("#result").text(res);
+            });
+        </script>
+    </body>
+</html>
